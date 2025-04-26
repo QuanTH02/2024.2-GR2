@@ -8,13 +8,9 @@ class TargetModel:
         self.token_scores = {}
     
     def __call__(self, code):
-        """Return a score based on code content"""
-        # For testing purposes, return a score that varies based on code content
         if "[MASK]" in code:
-            # Return a lower score for masked code
             return np.array([self.base_score - 0.2])
         else:
-            # Return different scores for different tokens
             tokens = code.split()
             for token in tokens:
                 if token not in self.token_scores:

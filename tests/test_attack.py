@@ -1,5 +1,7 @@
 import pytest
-from src.attack.attack import CodeAttack
+import torch
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+from src.attacks.attack import CodeAttack
 from src.constraints.code_constraints import CodeConstraints
 from src.utils.tokenizer import CodeTokenizer
 
@@ -7,23 +9,52 @@ class MockModel:
     def __init__(self):
         self.original_code = None
         
-    def __call__(self, code):
-        if self.original_code is None:
-            self.original_code = code
-            return 1.0
+    def __call__(self, **kwargs):
+        if 'inputs_embeds' in kwargs:
+            return type('obj', (object,), {
+                'loss': torch.tensor(0.5),
+                'logits': torch.randn(1, 10, 768)
+            })
         return 0.5
+        
+    def get_input_embeddings(self):
+        return lambda x: torch.randn(x.shape[0], x.shape[1], 768)
+        
+    def generate(self, **kwargs):
+        return torch.randn(1, 10)
+        
+    def to(self, device):
+        return self
 
 @pytest.fixture
 def mock_model():
     return MockModel()
 
 @pytest.fixture
-def code_attack(mock_model):
+def mock_tokenizer():
+    tokenizer = AutoTokenizer.from_pretrained("Salesforce/codet5-base")
+    return tokenizer
+
+@pytest.fixture
+def code_attack(mock_model, mock_tokenizer):
     return CodeAttack(
         model=mock_model,
+        tokenizer=mock_tokenizer,
         max_perturbations=0.4,
         similarity_threshold=0.5
     )
+
+@pytest.fixture
+def model_and_tokenizer():
+    model_name = "Salesforce/codet5-base"
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    return model, tokenizer
+
+@pytest.fixture
+def attack(model_and_tokenizer):
+    model, tokenizer = model_and_tokenizer
+    return CodeAttack(model=model, tokenizer=tokenizer)
 
 def test_find_vulnerable_tokens(code_attack):
     code = """
@@ -119,4 +150,68 @@ def test_tokenizer():
     assert tokenizer.is_valid_number("123")
     assert not tokenizer.is_valid_number("abc")
     assert tokenizer.is_valid_string('"test"')
-    assert not tokenizer.is_valid_string("test") 
+    assert not tokenizer.is_valid_string("test")
+
+def test_token_substitution(attack):
+    code = "def add(a, b): return a + b"
+    result = attack.generate(code)
+    assert result['original_code'] == code
+    assert result['adversarial_code'] != code
+    assert result['similarity'] >= 0.5
+    assert result['perturbations'] > 0
+
+def test_token_insertion(attack):
+    code = "def multiply(x, y): return x * y"
+    result = attack.generate(code)
+    assert result['original_code'] == code
+    assert result['adversarial_code'] != code
+    assert result['similarity'] >= 0.5
+    assert result['perturbations'] > 0
+
+def test_token_deletion(attack):
+    code = "def divide(a, b): return a / b"
+    result = attack.generate(code)
+    assert result['original_code'] == code
+    assert result['adversarial_code'] != code
+    assert result['similarity'] >= 0.5
+    assert result['perturbations'] > 0
+
+def test_token_reordering(attack):
+    code = "def subtract(a, b): return a - b"
+    result = attack.generate(code)
+    assert result['original_code'] == code
+    assert result['adversarial_code'] != code
+    assert result['similarity'] >= 0.5
+    assert result['perturbations'] > 0
+
+def test_invalid_code(attack):
+    code = "def invalid(): return"
+    result = attack.generate(code)
+    assert result['original_code'] == code
+    assert result['adversarial_code'] == code  # Should not modify invalid code
+    assert result['similarity'] == 1.0
+    assert result['perturbations'] == 0
+
+def test_empty_code(attack):
+    code = ""
+    result = attack.generate(code)
+    assert result['original_code'] == code
+    assert result['adversarial_code'] == code  # Should not modify empty code
+    assert result['similarity'] == 1.0
+    assert result['perturbations'] == 0
+
+def test_long_code(attack):
+    code = """
+    def complex_function(a, b, c):
+        if a > b:
+            return a + c
+        elif b > c:
+            return b - a
+        else:
+            return c * b
+    """
+    result = attack.generate(code)
+    assert result['original_code'] == code
+    assert result['adversarial_code'] != code
+    assert result['similarity'] >= 0.5
+    assert result['perturbations'] > 0 

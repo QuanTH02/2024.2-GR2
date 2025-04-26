@@ -1,0 +1,22 @@
+[
+    {
+        "code": "def add(a, b): return a + b",
+        "description": "Simple addition function"
+    },
+    {
+        "code": "def multiply(x, y): return x * y",
+        "description": "Simple multiplication function"
+    },
+    {
+        "code": "def divide(a, b): return a / b",
+        "description": "Simple division function"
+    },
+    {
+        "code": "def subtract(a, b): return a - b",
+        "description": "Simple subtraction function"
+    },
+    {
+        "code": "def complex_function(a, b, c):\n    if a > b:\n        return a + c\n    elif b > c:\n        return b - a\n    else:\n        return c * b",
+        "description": "Complex function with multiple conditions"
+    }
+] 
