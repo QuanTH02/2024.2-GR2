@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: codeattack
+Version: 0.1.0
+Requires-Python: >=3.6
+Requires-Dist: openai
+Requires-Dist: numpy
+Requires-Dist: tqdm
+Dynamic: requires-dist
+Dynamic: requires-python
