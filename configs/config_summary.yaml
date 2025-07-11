@@ -3,11 +3,11 @@ victim_model : 'codet5'
 input : 'pl'
 output : 'nl'
 lang: 'java_en_no_attack'
-data_path : '/home/akshitajha/adversarial_attack/generation/dataset/code_summarization/codet5/java/test.jsonl'
-victim_model_ckpt: '/home/akshitajha/adversarial_attack/generation/checkpoints/code_summarization/java_en_XX/codet5/finetuned_models_summarize_java_codet5_base.bin'
+data_path : './data/code_summarization/codet5/java/test.jsonl'
+victim_model_ckpt: './checkpoints/code_summarization/java_en_XX/codet5/finetuned_models_summarize_java_codet5_base.bin'
 max_source_length: 256
 max_target_length: 128
-output_path: '/home/akshitajha/adversarial_attack/generation/output'
+output_path: './output'
 mlm_path : 'microsoft/codebert-base-mlm'
 output_dir : ''
 start : 0

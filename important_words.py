@@ -39,6 +39,11 @@ def get_important_scores(words, pred_score, pred_indices, victim_model, config, 
         all_masked_code_ids.append(torch.tensor(input_ids))
         all_attention_masks.append(torch.tensor(attention_mask))
                     
+    # Check if we have any masked codes to process
+    if len(all_masked_code_ids) == 0:
+        # Return empty list if no words to mask
+        return []
+    
     all_masked_codes =  torch.stack(all_masked_code_ids).to(config['device'])
     all_attention_masks = torch.stack(all_attention_masks).to(config['device'])
     
@@ -125,6 +130,11 @@ def get_important_scores_graphcodebert(words, pred_score, pred_indices, victim_m
         all_position_idx.append(position_idx)
         all_attention_masks.append(attention_mask)
                     
+    # Check if we have any masked codes to process
+    if len(all_masked_code_ids) == 0:
+        # Return empty list if no words to mask
+        return []
+    
     all_masked_codes =  torch.stack(all_masked_code_ids).to(config['device'])
     all_source_masks = torch.stack(all_source_mask_ids).to(config['device'])
     all_position_idx = torch.stack(all_position_idx).to(config['device'])

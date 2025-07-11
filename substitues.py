@@ -7,49 +7,60 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 import pandas as pd
+import re
 
 
 def constrain_type(config, tgt_word, final_words):
-    in_file = os.path.join(config['output_dir'], config['victim_model'] + '.txt')
-    fp = open(in_file, 'w+')
-    fp.write(tgt_word.strip() + '\n')
-    for words in final_words:
-        # Tokenization cannot handle nested "'"
-        if "'" in words:
-            words = words.replace("'", "")
-        fp.write(words.strip() + '\n')
-    fp.close()
-
-    out_file = os.path.join(config['output_dir'], config['victim_model'] + '.json')
-    script_file = '/home/akshitajha/adversarial_attack/scripts/tokenizer/./tokenize' 
-    command =  script_file + ' ' + in_file + ' -m csv -o ' + out_file
-    os.system(command)
-
-    # Saved in the format [line, column, class, token]
-    data = pd.read_csv(out_file)
-
+    # Simple token classification without external script
+    def classify_token(token):
+        """Simple token classification"""
+        if token.isdigit():
+            return 'integer'
+        elif token.replace('.', '').isdigit() and '.' in token:
+            return 'floating'
+        elif token.startswith('"') or token.startswith("'") or token.endswith('"') or token.endswith("'"):
+            return 'string'
+        elif token in ['if', 'for', 'while', 'def', 'class', 'return', 'import', 'from', 'as', 'in', 'is', 'and', 'or', 'not', 'True', 'False', 'None', 'try', 'except', 'finally', 'with', 'lambda', 'yield', 'raise', 'assert', 'del', 'global', 'nonlocal', 'pass', 'break', 'continue', 'elif', 'else', 'public', 'private', 'protected', 'static', 'final', 'abstract', 'interface', 'extends', 'implements', 'new', 'this', 'super', 'null', 'void', 'int', 'float', 'double', 'boolean', 'char', 'string', 'var', 'let', 'const', 'function', 'class', 'constructor', 'get', 'set', 'async', 'await', 'export', 'import', 'default', 'module', 'require', 'console', 'log', 'print', 'printf', 'scanf', 'malloc', 'free', 'sizeof', 'struct', 'union', 'enum', 'typedef', 'define', 'include', 'ifdef', 'endif', 'pragma', 'extern', 'volatile', 'register', 'auto', 'goto', 'switch', 'case', 'default', 'do', 'while', 'for', 'if', 'else', 'return', 'break', 'continue', 'sizeof', 'typeof', 'instanceof', 'delete', 'new', 'in', 'of', 'yield', 'await', 'async', 'function', 'class', 'extends', 'implements', 'interface', 'enum', 'namespace', 'module', 'export', 'import', 'require', 'define', 'amd', 'umd', 'commonjs', 'es6', 'strict', 'use', 'strict']:
+            return 'keyword'
+        elif re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*$', token):
+            return 'identifier'
+        elif token in ['+', '-', '*', '/', '=', '==', '!=', '<', '>', '<=', '>=', '&&', '||', '!', '&', '|', '^', '~', '<<', '>>', '+=', '-=', '*=', '/=', '%=', '&=', '|=', '^=', '<<=', '>>=', '++', '--', '->', '=>', '::', '...', '?', ':', ';', ',', '.', '(', ')', '[', ']', '{', '}', '@', '#', '$', '%', '&', '*', '+', '-', '=', '|', '\\', '/', '`', '~', '!', '?', '^', '_', ':', ';', '"', "'", '<', '>', ',', '.']:
+            return 'operator'
+        else:
+            return 'identifier'  # Default to identifier
+    
+    # Create simple classification data
+    results = []
+    all_words = [tgt_word] + final_words
+    
+    for i, word in enumerate(all_words, 1):
+        token_class = classify_token(word)
+        results.append({
+            'line': i,
+            'column': 1,
+            'class': token_class,
+            'token': word
+        })
+    
+    # Create meta_data similar to original logic
     meta_data = {}
     token_class = ['identifier', 'keyword', 'integer', 'floating', 'string', 'character', 'operator', 'preprocessor', 'sum_classes']
    
-    # Insert target word as the first word
-    # final_words indexes from 0
-    # meta_data indexes from 1
-    final_words.insert(0, tgt_word)
-    for i in range(1, len(final_words)+1):
+    for i in range(1, len(all_words)+1):
         meta_data[i] = {}
         for c in token_class:
             meta_data[i][c] = 0
 
-    for idx, d in data.iterrows():
-        meta_data[d['line']][d['class']] =  meta_data[d['line']][d['class']] + 1
-        meta_data[d['line']]['sum_classes'] = meta_data[d['line']]['sum_classes'] + 1
+    for result in results:
+        meta_data[result['line']][result['class']] = meta_data[result['line']][result['class']] + 1
+        meta_data[result['line']]['sum_classes'] = meta_data[result['line']]['sum_classes'] + 1
 
     tgt_class = meta_data[1]['sum_classes']
     poss_words = []
     rejected_words = []
 
     # Stricter Type Constraint
-    tgt_tokens = data[data['line']==1]['class'].values.tolist()
+    tgt_tokens = [r['class'] for r in results if r['line'] == 1]
 
     # If DFG constraint only
     if config['use_dfg_constraint'] == 1:
@@ -59,43 +70,43 @@ def constrain_type(config, tgt_word, final_words):
     for key in meta_data:
         # Making sure the same classes are replaced
         if meta_data[key]['sum_classes'] == tgt_class:
-            sub_tokens = data[data['line']==key]['class'].values.tolist()
+            sub_tokens = [r['class'] for r in results if r['line'] == key]
             if tgt_tokens == sub_tokens:
-                poss_words.append(final_words[key-1])
+                poss_words.append(all_words[key-1])
             else:
-                rejected_words.append(final_words[key-1])
+                rejected_words.append(all_words[key-1])
 
         # Addition of an operator
         elif meta_data[key]['sum_classes'] == tgt_class + 1:
-            sub_tokens = data[data['line']==key]['class'].values.tolist()
+            sub_tokens = [r['class'] for r in results if r['line'] == key]
             sub_len = sub_tokens.count('operator')
             tgt_len = tgt_tokens.count('operator')
             if sub_len - tgt_len == 1:
                 # Make sure the token classes are the same except an operator
                 # A keyword is only replaced by a keyword, etc.
                 if set(sub_tokens) == set(tgt_tokens):
-                    poss_words.append(final_words[key-1])
+                    poss_words.append(all_words[key-1])
                 else:
-                    rejected_words.append(final_words[key-1])
+                    rejected_words.append(all_words[key-1])
             else:
-                rejected_words.append(final_words[key-1])
+                rejected_words.append(all_words[key-1])
 
         # Deletion of an operator
         elif meta_data[key]['sum_classes'] == tgt_class - 1:
-            sub_tokens = data[data['line']==key]['class'].values.tolist()
+            sub_tokens = [r['class'] for r in results if r['line'] == key]
             sub_len = sub_tokens.count('operator')
             tgt_len = tgt_tokens.count('operator')
             if tgt_len - sub_len == 1:
                 # Make sure the token classes are the same except an operator
                 # A keyword is only replaced by a keyword, etc.
                 if set(sub_tokens) == set(tgt_tokens):
-                    poss_words.append(final_words[key-1])
+                    poss_words.append(all_words[key-1])
                 else:
-                    rejected_words.append(final_words[key-1])
+                    rejected_words.append(all_words[key-1])
             else:
-                rejected_words.append(final_words[key-1])
+                rejected_words.append(all_words[key-1])
         else:
-            rejected_words.append(final_words[key-1])
+            rejected_words.append(all_words[key-1])
 
     return poss_words[1:]
 
@@ -124,7 +135,9 @@ def get_bpe_substitues(config, tgt_word, substitutes, tokenizer, mlm_model):
     word_list = []
     # all_substitutes = all_substitutes[:24]
     all_substitutes = torch.tensor(all_substitutes) # [ N, L ]
-    all_substitutes = all_substitutes[:24].to('cuda')
+    # Use device from config instead of hard-coded cuda
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    all_substitutes = all_substitutes[:24].to(device)
     # print(substitutes.size(), all_substitutes.size())
     N, L = all_substitutes.size()
     word_predictions = mlm_model(all_substitutes)[0] # N L vocab-size

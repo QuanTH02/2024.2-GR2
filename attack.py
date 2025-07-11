@@ -177,7 +177,8 @@ def attack(feature, config, victim_model, atk_model, max_length=512, threshold_p
         input_ids_ = torch.tensor([atk_model['tokenizer'].convert_tokens_to_ids(sub_words)])
 
         # Get the best possible prediction for each position of the I/P code
-        word_predictions = atk_model['mlm'](input_ids_.to('cuda'))[0].squeeze()  # seq-len(sub) x vocab
+        # Use device from config instead of hard-coded cuda
+        word_predictions = atk_model['mlm'](input_ids_.to(config['device']))[0].squeeze()  # seq-len(sub) x vocab
         # Top-k Predictions for a masked input index
         word_pred_scores_all, word_predictions = torch.topk(word_predictions, config['k'], -1)  # seq-len x k
         # Ignore the 1st word because it's most probably the same word

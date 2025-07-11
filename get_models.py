@@ -48,21 +48,42 @@ def get_plbart_model(config):
 
 
 def get_codet5_model(config):
-    model_ckpt = torch.load(config['victim_model_ckpt']) # original codet5 ckpt
-    if config['task'] == 'summarize':
-        model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base-multi-sum')
-    else:
-        model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base')
-    weights = model.state_dict()
+    try:
+        # Try to load the checkpoint file
+        model_ckpt = torch.load(config['victim_model_ckpt']) # original codet5 ckpt
+        print(f"✓ Loaded checkpoint from: {config['victim_model_ckpt']}")
+        
+        if config['task'] == 'summarize':
+            model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base-multi-sum')
+        else:
+            model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base')
+        weights = model.state_dict()
 
-    # Load weights.
-    for k in weights:
-        if k in model_ckpt:
-            weights[k] = model_ckpt[k]
+        # Load weights.
+        for k in weights:
+            if k in model_ckpt:
+                weights[k] = model_ckpt[k]
 
-    model.load_state_dict(weights)
-
-    tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base')
+        model.load_state_dict(weights)
+        
+    except FileNotFoundError:
+        # Fallback: Load base model from HuggingFace
+        print(f"⚠ Checkpoint not found: {config['victim_model_ckpt']}")
+        print("⚠ Loading base CodeT5 model from HuggingFace (not fine-tuned)")
+        
+        if config['task'] == 'summarize':
+            model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base-multi-sum')
+        else:
+            model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base')
+    
+    try:
+        tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base')
+    except Exception as e:
+        print(f"⚠ Tokenizer loading failed: {e}")
+        print("⚠ Trying alternative tokenizer...")
+        from transformers import T5Tokenizer
+        tokenizer = T5Tokenizer.from_pretrained('Salesforce/codet5-base')
+    
     return model, tokenizer
 
 
@@ -77,7 +98,12 @@ def get_codebert_model(config):
                   beam_size=config['beam_size'],max_length=config['max_target_length'],
                   sos_id=tokenizer.cls_token_id,eos_id=tokenizer.sep_token_id)
     
-    model.load_state_dict(torch.load(config['victim_model_ckpt']))
+    try:
+        model.load_state_dict(torch.load(config['victim_model_ckpt']))
+        print(f"✓ Loaded CodeBERT checkpoint from: {config['victim_model_ckpt']}")
+    except FileNotFoundError:
+        print(f"⚠ CodeBERT checkpoint not found: {config['victim_model_ckpt']}")
+        print("⚠ Using base CodeBERT model (not fine-tuned)")
 
     return model, tokenizer
 
@@ -93,7 +119,12 @@ def get_graphcodebert_model(config):
                   beam_size=config['beam_size'],max_length=config['max_target_length'],
                   sos_id=tokenizer.cls_token_id,eos_id=tokenizer.sep_token_id)
     
-    model.load_state_dict(torch.load(config['victim_model_ckpt']))
+    try:
+        model.load_state_dict(torch.load(config['victim_model_ckpt']))
+        print(f"✓ Loaded GraphCodeBERT checkpoint from: {config['victim_model_ckpt']}")
+    except FileNotFoundError:
+        print(f"⚠ GraphCodeBERT checkpoint not found: {config['victim_model_ckpt']}")
+        print("⚠ Using base GraphCodeBERT model (not fine-tuned)")
 
     return model, tokenizer
 
@@ -108,6 +139,11 @@ def get_roberta_model(config):
                   beam_size=config['beam_size'],max_length=config['max_target_length'],
                   sos_id=tokenizer.cls_token_id,eos_id=tokenizer.sep_token_id)
     
-    model.load_state_dict(torch.load(config['victim_model_ckpt']))
+    try:
+        model.load_state_dict(torch.load(config['victim_model_ckpt']))
+        print(f"✓ Loaded RoBERTa checkpoint from: {config['victim_model_ckpt']}")
+    except FileNotFoundError:
+        print(f"⚠ RoBERTa checkpoint not found: {config['victim_model_ckpt']}")
+        print("⚠ Using base RoBERTa model (not fine-tuned)")
 
     return model, tokenizer

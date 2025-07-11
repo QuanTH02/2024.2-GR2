@@ -20,5 +20,5 @@ num_label : 0
 use_pred_idx: 1
 input : 'pl'
 output : 'pl'
-output_path: '/home/akshitajha/adversarial_attack/generation/output'
+output_path: './output'
 mlm_path : 'microsoft/codebert-base-mlm'

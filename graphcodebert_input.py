@@ -11,7 +11,7 @@ from io import open
 from itertools import cycle
 import torch.nn as nn
 from bleu import _bleu
-from transformers import (WEIGHTS_NAME, AdamW, get_linear_schedule_with_warmup,
+from transformers import (WEIGHTS_NAME, get_linear_schedule_with_warmup,
                           RobertaConfig, RobertaModel, RobertaTokenizer)
 MODEL_CLASSES = {'roberta': (RobertaConfig, RobertaModel, RobertaTokenizer)}
 
@@ -94,13 +94,25 @@ class TextDataset(Dataset):
                 # torch.tensor(self.examples[item].target_ids),
                 # torch.tensor(self.examples[item].target_mask),)
 
+# Create Language object once for all languages
+try:
+    LANGUAGE = Language(os.path.join(parent_dir, 'graphcodebert_parser/my-languages.so'))
+except TypeError:
+    # For newer versions, try without the library path
+    LANGUAGE = None
+
 parsers={} 
 for lang in dfg_function:
-    LANGUAGE = Language(os.path.join(parent_dir, 'graphcodebert_parser/my-languages.so'), lang)
-    parser = Parser()
-    parser.set_language(LANGUAGE) 
-    parser = [parser,dfg_function[lang]]    
-    parsers[lang]= parser
+    if LANGUAGE is not None:
+        parser = Parser()
+        parser.set_language(LANGUAGE) 
+        parser = [parser,dfg_function[lang]]    
+        parsers[lang]= parser
+    else:
+        # Fallback: create parser without language specification
+        parser = Parser()
+        parser = [parser,dfg_function[lang]]    
+        parsers[lang]= parser
     
 #remove comments, tokenize code and extract dataflow     
 def extract_dataflow(code, parser,lang):
@@ -141,13 +153,7 @@ def extract_dataflow(code, parser,lang):
         dfg=[]
     return code_tokens,dfg
 
-parsers={}        
-for lang in dfg_function:
-    LANGUAGE = Language(os.path.join(parent_dir, 'graphcodebert_parser/my-languages.so'), lang)
-    parser = Parser()
-    parser.set_language(LANGUAGE) 
-    parser = [parser,dfg_function[lang]]    
-    parsers[lang]= parser
+# This section is now handled above
     
 def convert_examples_to_features(examples, tokenizer, config, stage=None):
     features = []
