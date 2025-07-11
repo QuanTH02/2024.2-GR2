@@ -1,0 +1,101 @@
+[
+  {
+    "success": 4,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 18.58,
+    "change": 1,
+    "num_word": 2,
+    "query": 33,
+    "changes": [
+      [
+        0,
+        "existing",
+        "using"
+      ]
+    ],
+    "input": "using System;",
+    "adv": "existing System;",
+    "gold_out": "public class HelloWorld {",
+    "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+    "adv_out": "c reateSystem: I C reateSystem {",
+    "imp_words": {
+      "using": 324.45654296875
+    }
+  },
+  {
+    "success": 3,
+    "pred_bleu": 0.57,
+    "after_attack_bleu": 0.57,
+    "change": 0,
+    "num_word": 4,
+    "query": 0,
+    "changes": [],
+    "input": "public class HelloWorld {",
+    "adv": "public class HelloWorld {",
+    "gold_out": "public static void main(String[] args) {",
+    "pred_out": "}",
+    "adv_out": "}",
+    "imp_words": {}
+  },
+  {
+    "success": 4,
+    "pred_bleu": 30.21,
+    "after_attack_bleu": 4.98,
+    "change": 1,
+    "num_word": 6,
+    "query": 5,
+    "changes": [
+      [
+        3,
+        "Main(int[]",
+        "Main(string[]"
+      ]
+    ],
+    "input": "public static void Main(string[] args) {",
+    "adv": "public static void Main(int[] args) {",
+    "gold_out": "System.out.println(\"Hello, World!\");",
+    "pred_out": "public static void Main()",
+    "adv_out": "public",
+    "imp_words": {
+      "Main(string[]": 134.32989501953125
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 22.96,
+    "change": 1,
+    "num_word": 2,
+    "query": 23,
+    "changes": [
+      [
+        0,
+        "Console.WriteLine(\" Hello!",
+        "Console.WriteLine(\"Hello,"
+      ]
+    ],
+    "input": "Console.WriteLine(\"Hello, World!\");",
+    "adv": "Console.WriteLine(\" Hello! World!\");",
+    "gold_out": "}",
+    "pred_out": "functio n (){ f u",
+    "adv_out": "functio n (){ f u",
+    "imp_words": {
+      "Console.WriteLine(\"Hello,": 77.52861022949219
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 27.3,
+    "after_attack_bleu": 27.3,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "}",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  }
+]

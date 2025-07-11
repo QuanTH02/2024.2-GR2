@@ -93,7 +93,7 @@ def get_important_scores(words, pred_score, pred_indices, victim_model, config, 
         # Original Pred Sequence Text: "<s> Two sum </s>"; Orginal pred Indices: [1, 100, 200, 2]
         # Calculate the scores only at these indices
         elif config['use_pred_idx'] == 1:
-            max_scores_with_idx = torch.index_select(batch_scores_stack, 2, torch.tensor(pred_indices).to(config['device']))
+            max_scores_with_idx = torch.index_select(batch_scores_stack, 2, pred_indices.to(config['device']))
             max_scores_idx_batch = torch.diagonal(max_scores_with_idx, dim1=-2, dim2=-1)
             max_scores = torch.sum(max_scores_idx_batch, dim=1)
 
@@ -184,7 +184,7 @@ def get_important_scores_graphcodebert(words, pred_score, pred_indices, victim_m
         # Original Pred Sequence Text: "<s> Two sum </s>"; Orginal pred Indices: [1, 100, 200, 2]
         # Calculate the scores only at these indices
         elif config['use_pred_idx'] == 1:
-            max_scores_with_idx = torch.index_select(batch_scores_stack, 2, torch.tensor(pred_indices).to(config['device']))
+            max_scores_with_idx = torch.index_select(batch_scores_stack, 2, pred_indices.to(config['device']))
             max_scores_idx_batch = torch.diagonal(max_scores_with_idx, dim1=-2, dim2=-1)
             max_scores = torch.sum(max_scores_idx_batch, dim=1)
 

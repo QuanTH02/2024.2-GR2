@@ -1,0 +1,254 @@
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;  // Fixed: correct addition
+    }
+}
+public class StringUtils {
+    public static String reverse(String str) {
+        if (str == null) return null;
+        return new StringBuilder(str).reverse().toString();  // Fixed: proper reversal
+    }
+}
+public class ArrayHelper {
+    public static int findMax(int[] arr) {
+        if (arr == null || arr.length == 0) return -1;
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {  // Fixed: correct comparison
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+}
+public class FileHandler {
+    public static void writeToFile(String filename, String content) {
+        try (FileWriter writer = new FileWriter(filename)) {
+            writer.write(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+public class MathUtils {
+    public static boolean isPrime(int n) {
+        if (n < 2) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {  // Fixed: optimized loop
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+}
+public class ValidationUtils {
+    public static boolean isValidEmail(String email) {
+        if (email == null) return false;
+        String emailRegex = "^[A-Za-z0-9+_.-]+@(.+)$";
+        return email.matches(emailRegex);  // Fixed: proper email validation
+    }
+    
+    public static boolean isValidPhone(String phone) {
+        if (phone == null) return false;
+        String phoneRegex = "^\d{10,}$";
+        return phone.replaceAll("[^\d]", "").matches(phoneRegex);  // Fixed: proper phone validation
+    }
+}
+public class TestClass0 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass1 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass2 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass3 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass4 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass5 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass6 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass7 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass8 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass9 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass10 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass11 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass12 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass13 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass14 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass15 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass16 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass17 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass18 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}
+public class TestClass19 {
+    public static int calculate(int x, int y) {
+        return x + y;  // Fixed: correct calculation
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input.trim().toLowerCase();  // Fixed: proper processing
+    }
+}

@@ -100,10 +100,19 @@ def compute_bleu(reference_corpus, translation_corpus, max_order=4,
   else:
     geo_mean = 0
 
-  ratio = float(translation_length) / reference_length
+  # Handle division by zero
+  if reference_length == 0:
+    if translation_length == 0:
+      ratio = 1.0  # Both are empty, perfect match
+    else:
+      ratio = 0.0  # Reference is empty but translation is not
+  else:
+    ratio = float(translation_length) / reference_length
 
   if ratio > 1.0:
     bp = 1.
+  elif ratio == 0.0:
+    bp = 0.0  # Handle case where ratio is 0
   else:
     bp = math.exp(1 - 1. / ratio)
 
@@ -118,8 +127,11 @@ def _bleu(ref_file, trans_file, subword_option=None):
     ref_files = [ref_file]
     reference_text = []
     for reference_filename in ref_files:
-        with open(reference_filename) as fh:
-            reference_text.append(fh.readlines())
+        with open(reference_filename, encoding='utf-8') as fh:
+            lines = fh.readlines()
+            if not lines:  # Handle empty file
+                return 0.0
+            reference_text.append(lines)
     per_segment_references = []
     for references in zip(*reference_text):
         reference_list = []
@@ -127,8 +139,13 @@ def _bleu(ref_file, trans_file, subword_option=None):
             reference_list.append(reference.strip().split())
         per_segment_references.append(reference_list)
     translations = []
-    with open(trans_file) as fh:
+    with open(trans_file, encoding='utf-8') as fh:
         for line in fh:
             translations.append(line.strip().split())
+    
+    # Handle empty translations
+    if not translations or not per_segment_references:
+        return 0.0
+    
     bleu_score, _, _, _, _, _ = compute_bleu(per_segment_references, translations, max_order, smooth)
     return round(100 * bleu_score,2)

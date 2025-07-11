@@ -1,0 +1,1129 @@
+{
+  "total_samples": 67,
+  "logic_errors": [
+    {
+      "sample_index": 0,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 18.58,
+        "change": 1,
+        "num_word": 2,
+        "query": 33,
+        "changes": [
+          [
+            0,
+            "existing",
+            "using"
+          ]
+        ],
+        "input": "using System;",
+        "adv": "existing System;",
+        "gold_out": "public class Calculator {",
+        "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+        "adv_out": "c reateSystem: I C reateSystem {",
+        "imp_words": {
+          "using": 324.45654296875
+        }
+      }
+    },
+    {
+      "sample_index": 2,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 32.37,
+        "after_attack_bleu": 27.3,
+        "change": 1,
+        "num_word": 4,
+        "query": 20,
+        "changes": [
+          [
+            2,
+            "protected",
+            "Calculator"
+          ]
+        ],
+        "input": "public class Calculator {",
+        "adv": "public class protected {",
+        "gold_out": "return a + b;",
+        "pred_out": "{ } }",
+        "adv_out": "protected int field ; }",
+        "imp_words": {
+          "Calculator": 111.2520980834961
+        }
+      }
+    },
+    {
+      "sample_index": 3,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 84.09,
+        "after_attack_bleu": 22.96,
+        "change": 1,
+        "num_word": 7,
+        "query": 3,
+        "changes": [
+          [
+            7,
+            "Ġint",
+            "int"
+          ]
+        ],
+        "input": "public int Add(int a, int b) {",
+        "adv": "public int Add(int a, Ġint b) {",
+        "gold_out": "}",
+        "pred_out": "public",
+        "adv_out": "return a + b; }",
+        "imp_words": {
+          "int": 89.60737609863281
+        }
+      }
+    },
+    {
+      "sample_index": 7,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 84.09,
+        "after_attack_bleu": 35.93,
+        "change": 1,
+        "num_word": 7,
+        "query": 1,
+        "changes": [
+          [
+            8,
+            "b))",
+            "b)"
+          ]
+        ],
+        "input": "public int Subtract(int a, int b) {",
+        "adv": "public int Subtract(int a, int b)) {",
+        "gold_out": "}",
+        "pred_out": "public",
+        "adv_out": "public int Add (",
+        "imp_words": {
+          "b)": 93.36068725585938
+        }
+      }
+    },
+    {
+      "sample_index": 8,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 1.54,
+        "change": 2,
+        "num_word": 4,
+        "query": 70,
+        "changes": [
+          [
+            2,
+            "'",
+            "-"
+          ],
+          [
+            0,
+            "Ġ-",
+            "return"
+          ]
+        ],
+        "input": "return a - b;",
+        "adv": "Ġ- a ' b;",
+        "gold_out": "}",
+        "pred_out": "case\"s\": r e t u",
+        "adv_out": "��-a-b��-c��-b��-c��-b��-a-b��-c��-b��-a-b��-a-b��-a-b��-a-b��-a-b��-a-b��-a-b��-a-b��-a-b��-a-b�",
+        "imp_words": {
+          "-": 142.632568359375,
+          "return": 133.76666259765625
+        }
+      }
+    },
+    {
+      "sample_index": 11,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 18.8,
+        "after_attack_bleu": 18.58,
+        "change": 1,
+        "num_word": 2,
+        "query": 33,
+        "changes": [
+          [
+            0,
+            "existing",
+            "using"
+          ]
+        ],
+        "input": "using System;",
+        "adv": "existing System;",
+        "gold_out": "if (str == null) return null;",
+        "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+        "adv_out": "c reateSystem: I C reateSystem {",
+        "imp_words": {
+          "using": 324.45654296875
+        }
+      }
+    },
+    {
+      "sample_index": 12,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 18.58,
+        "after_attack_bleu": 18.33,
+        "change": 1,
+        "num_word": 2,
+        "query": 4,
+        "changes": [
+          [
+            0,
+            "File",
+            "using"
+          ]
+        ],
+        "input": "using System.Text;",
+        "adv": "File System.Text;",
+        "gold_out": "return new StringBuilder(str).reverse().toString();",
+        "pred_out": "c ass S t ring{ }",
+        "adv_out": "Module . System =",
+        "imp_words": {
+          "using": 84.11221313476562
+        }
+      }
+    },
+    {
+      "sample_index": 15,
+      "errors": [
+        "Success logic error: expected 2, got 3"
+      ],
+      "sample": {
+        "success": 3,
+        "pred_bleu": 0.57,
+        "after_attack_bleu": 0.57,
+        "change": 0,
+        "num_word": 6,
+        "query": 0,
+        "changes": [],
+        "input": "public static string Reverse(string str) {",
+        "adv": "public static string Reverse(string str) {",
+        "gold_out": "public static boolean isEmpty(String str) {",
+        "pred_out": "r",
+        "adv_out": "r",
+        "imp_words": {}
+      }
+    },
+    {
+      "sample_index": 16,
+      "errors": [
+        "Adv should be different from input when changes exist"
+      ],
+      "sample": {
+        "success": 1,
+        "pred_bleu": 19.72,
+        "after_attack_bleu": 0,
+        "change": 3,
+        "num_word": 6,
+        "query": 79,
+        "changes": [
+          [
+            6,
+            ":",
+            "return"
+          ],
+          [
+            1,
+            "(arr",
+            "(str"
+          ],
+          [
+            4,
+            "string))",
+            "null)"
+          ]
+        ],
+        "input": "if (str == null) return null;",
+        "adv": "if (str == null) return null;",
+        "gold_out": "return str == null || str.length() == 0;",
+        "pred_out": "return str == null || str.length() == 0;",
+        "adv_out": "return str == null || str.length() == 0;",
+        "imp_words": {
+          "return": 135.63612365722656,
+          "(str": 115.34909057617188,
+          "null)": 113.11908721923828,
+          "if": 103.39500427246094
+        }
+      }
+    },
+    {
+      "sample_index": 17,
+      "errors": [
+        "Success logic error: expected 4, got 2"
+      ],
+      "sample": {
+        "success": 2,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 22.96,
+        "change": 2,
+        "num_word": 4,
+        "query": 79,
+        "changes": [
+          [
+            4,
+            "(",
+            "="
+          ],
+          [
+            0,
+            " char []",
+            "char[]"
+          ]
+        ],
+        "input": "char[] charArray = str.ToCharArray();",
+        "adv": " char [] character Array ( str.ToCharArray();",
+        "gold_out": "}",
+        "pred_out": "charArray = []; f or(",
+        "adv_out": "charArray = []; f or(",
+        "imp_words": {
+          "=": 130.4225616455078,
+          "charArray": 116.90701293945312,
+          "char[]": 108.77887725830078
+        }
+      }
+    },
+    {
+      "sample_index": 19,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 18.58,
+        "change": 1,
+        "num_word": 3,
+        "query": 5,
+        "changes": [
+          [
+            1,
+            ".",
+            "new"
+          ]
+        ],
+        "input": "return new string(charArray);",
+        "adv": "return . string(charArray);",
+        "gold_out": "public class ArrayHelper {",
+        "pred_out": "charArray.lengt h } f unction",
+        "adv_out": "rray(charArray ) . j oin(String.fro m",
+        "imp_words": {
+          "new": 188.1111602783203
+        }
+      }
+    },
+    {
+      "sample_index": 22,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 1.54,
+        "change": 1,
+        "num_word": 6,
+        "query": 5,
+        "changes": [
+          [
+            7,
+            "str )",
+            "str)"
+          ]
+        ],
+        "input": "public static bool IsEmpty(string str) {",
+        "adv": "public static bool IsEmpty(string str ) {",
+        "gold_out": "Arrays.sort(arr);",
+        "pred_out": "public static bool IsEmpty(string str)",
+        "adv_out": "r",
+        "imp_words": {
+          "str)": 178.43414306640625
+        }
+      }
+    },
+    {
+      "sample_index": 23,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 27.3,
+        "after_attack_bleu": 22.96,
+        "change": 1,
+        "num_word": 2,
+        "query": 2,
+        "changes": [
+          [
+            0,
+            ".",
+            "return"
+          ]
+        ],
+        "input": "return string.IsNullOrEmpty(str);",
+        "adv": ". string.IsNullOrEmpty(str);",
+        "gold_out": "return arr;",
+        "pred_out": "unction( s tr) { return",
+        "adv_out": "r e turn u n",
+        "imp_words": {
+          "return": 76.05236053466797
+        }
+      }
+    },
+    {
+      "sample_index": 26,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 18.8,
+        "after_attack_bleu": 18.58,
+        "change": 1,
+        "num_word": 2,
+        "query": 33,
+        "changes": [
+          [
+            0,
+            "existing",
+            "using"
+          ]
+        ],
+        "input": "using System;",
+        "adv": "existing System;",
+        "gold_out": "public static int findMax(int[] arr) {",
+        "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+        "adv_out": "c reateSystem: I C reateSystem {",
+        "imp_words": {
+          "using": 324.45654296875
+        }
+      }
+    },
+    {
+      "sample_index": 27,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 6.74,
+        "after_attack_bleu": 4.19,
+        "change": 1,
+        "num_word": 2,
+        "query": 45,
+        "changes": [
+          [
+            0,
+            "ĠFile",
+            "using"
+          ]
+        ],
+        "input": "using System.Linq;",
+        "adv": "ĠFile System.Linq;",
+        "gold_out": "if (arr == null || arr.length == 0) return -1;",
+        "pred_out": "using System.Collections; using System.Linq;",
+        "adv_out": "��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s��s�",
+        "imp_words": {
+          "using": 208.95001220703125
+        }
+      }
+    },
+    {
+      "sample_index": 29,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 27.3,
+        "after_attack_bleu": 1.83,
+        "change": 1,
+        "num_word": 4,
+        "query": 1,
+        "changes": [
+          [
+            2,
+            "ObjectSupport",
+            "ArrayHelper"
+          ]
+        ],
+        "input": "public class ArrayHelper {",
+        "adv": "public class ObjectSupport {",
+        "gold_out": "}",
+        "pred_out": "[ ] array ; }",
+        "adv_out": "}",
+        "imp_words": {
+          "ArrayHelper": 129.99864196777344
+        }
+      }
+    },
+    {
+      "sample_index": 30,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 1.54,
+        "change": 1,
+        "num_word": 6,
+        "query": 7,
+        "changes": [
+          [
+            1,
+            "ĉ",
+            "static"
+          ]
+        ],
+        "input": "public static int[] Sort(int[] arr) {",
+        "adv": "public ĉ int[] Sort(int[] arr) {",
+        "gold_out": "}",
+        "pred_out": "r e t u rn",
+        "adv_out": "public",
+        "imp_words": {
+          "static": 145.5618133544922
+        }
+      }
+    },
+    {
+      "sample_index": 31,
+      "errors": [
+        "Adv should be different from input when changes exist"
+      ],
+      "sample": {
+        "success": 1,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 0,
+        "change": 3,
+        "num_word": 6,
+        "query": 113,
+        "changes": [
+          [
+            4,
+            "string )",
+            "null)"
+          ],
+          [
+            3,
+            "ads",
+            "=="
+          ],
+          [
+            6,
+            "back",
+            "return"
+          ]
+        ],
+        "input": "if (arr == null) return null;",
+        "adv": "if (arr == null) return null;",
+        "gold_out": "public class FileHandler {",
+        "pred_out": "public class FileHandler {",
+        "adv_out": "public class FileHandler {",
+        "imp_words": {
+          "null)": 138.78582763671875,
+          "==": 126.1634750366211,
+          "return": 119.90895080566406,
+          "if": 115.58282470703125
+        }
+      }
+    },
+    {
+      "sample_index": 33,
+      "errors": [
+        "Success logic error: expected 4, got 2"
+      ],
+      "sample": {
+        "success": 2,
+        "pred_bleu": 15.72,
+        "after_attack_bleu": 15.72,
+        "change": 1,
+        "num_word": 2,
+        "query": 49,
+        "changes": [
+          [
+            0,
+            "show",
+            "return"
+          ]
+        ],
+        "input": "return arr;",
+        "adv": "show arr;",
+        "gold_out": "try (FileWriter writer = new FileWriter(filename)) {",
+        "pred_out": "functi o n (arr,k y){if(arr==null)return null;for(var",
+        "adv_out": "functi o n (arr,k y){if(arr==null)return null;for(var",
+        "imp_words": {
+          "return": 374.8768615722656
+        }
+      }
+    },
+    {
+      "sample_index": 36,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 22.31,
+        "change": 1,
+        "num_word": 6,
+        "query": 1,
+        "changes": [
+          [
+            3,
+            "FindMax(IntArray",
+            "FindMax(int[]"
+          ]
+        ],
+        "input": "public static int FindMax(int[] arr) {",
+        "adv": "public static int FindMax(IntArray arr) {",
+        "gold_out": "e.printStackTrace();",
+        "pred_out": "public static int FindMax (",
+        "adv_out": "public static",
+        "imp_words": {
+          "FindMax(int[]": 152.8195343017578
+        }
+      }
+    },
+    {
+      "sample_index": 37,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 1.54,
+        "change": 2,
+        "num_word": 10,
+        "query": 53,
+        "changes": [
+          [
+            12,
+            "x",
+            "return"
+          ],
+          [
+            10,
+            " 0 )",
+            "0)"
+          ]
+        ],
+        "input": "if (arr == null || arr.Length == 0) return -1;",
+        "adv": "if (arr == null || arr.Length ==  0 ) x -1;",
+        "gold_out": "}",
+        "pred_out": "if (arr == null) return",
+        "adv_out": "}",
+        "imp_words": {
+          "return": 157.88531494140625,
+          "0)": 150.7478485107422
+        }
+      }
+    },
+    {
+      "sample_index": 38,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 18.58,
+        "change": 1,
+        "num_word": 2,
+        "query": 23,
+        "changes": [
+          [
+            0,
+            "catch",
+            "return"
+          ]
+        ],
+        "input": "return arr.Max();",
+        "adv": "catch arr.Max();",
+        "gold_out": "}",
+        "pred_out": "r eturn arr.Max(functi o n(arr",
+        "adv_out": "catch(e){};catch arr.Max(){};catch arr.Min(){};catch arr.Max(){};catch arr.Max(){};catch arr.Max(){};catch",
+        "imp_words": {
+          "return": 197.17315673828125
+        }
+      }
+    },
+    {
+      "sample_index": 41,
+      "errors": [
+        "Success logic error: expected 4, got 2"
+      ],
+      "sample": {
+        "success": 2,
+        "pred_bleu": 12.6,
+        "after_attack_bleu": 12.6,
+        "change": 1,
+        "num_word": 2,
+        "query": 49,
+        "changes": [
+          [
+            0,
+            "this",
+            "using"
+          ]
+        ],
+        "input": "using System;",
+        "adv": "this System;",
+        "gold_out": "try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {",
+        "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+        "adv_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+        "imp_words": {
+          "using": 324.45654296875
+        }
+      }
+    },
+    {
+      "sample_index": 42,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 30.21,
+        "after_attack_bleu": 22.96,
+        "change": 1,
+        "num_word": 2,
+        "query": 1,
+        "changes": [
+          [
+            0,
+            "use",
+            "using"
+          ]
+        ],
+        "input": "using System.IO;",
+        "adv": "use System.IO;",
+        "gold_out": "return reader.lines().collect(Collectors.joining(\"\\n\"));",
+        "pred_out": "using System.Collections.Generic; using System.Collections.Generic.InteropServices;",
+        "adv_out": "public static string GetLogFileName (",
+        "imp_words": {
+          "using": 324.10546875
+        }
+      }
+    },
+    {
+      "sample_index": 44,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 84.09,
+        "after_attack_bleu": 27.3,
+        "change": 1,
+        "num_word": 4,
+        "query": 2,
+        "changes": [
+          [
+            1,
+            "struct",
+            "class"
+          ]
+        ],
+        "input": "public class FileHandler {",
+        "adv": "public struct FileHandler {",
+        "gold_out": "e.printStackTrace();",
+        "pred_out": "}",
+        "adv_out": "public string path ; }",
+        "imp_words": {
+          "class": 91.3082275390625
+        }
+      }
+    },
+    {
+      "sample_index": 45,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 30.93,
+        "after_attack_bleu": 22.96,
+        "change": 1,
+        "num_word": 8,
+        "query": 1,
+        "changes": [
+          [
+            10,
+            "string]",
+            "content)"
+          ]
+        ],
+        "input": "public static void WriteToFile(string filename, string content) {",
+        "adv": "public static void WriteToFile(string filename, string string] {",
+        "gold_out": "return null;",
+        "pred_out": "{",
+        "adv_out": "string [], string [], int",
+        "imp_words": {
+          "content)": 78.94058990478516
+        }
+      }
+    },
+    {
+      "sample_index": 46,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 27.3,
+        "after_attack_bleu": 22.96,
+        "change": 1,
+        "num_word": 2,
+        "query": 1,
+        "changes": [
+          [
+            0,
+            "catch",
+            "try"
+          ]
+        ],
+        "input": "try {",
+        "adv": "catch {",
+        "gold_out": "}",
+        "pred_out": "s w itch(e) { }",
+        "adv_out": "c t i o n",
+        "imp_words": {
+          "try": 113.10537719726562
+        }
+      }
+    },
+    {
+      "sample_index": 47,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 30.21,
+        "after_attack_bleu": 22.96,
+        "change": 1,
+        "num_word": 2,
+        "query": 1,
+        "changes": [
+          [
+            0,
+            "File.WriteAllText(Filename\\\",",
+            "File.WriteAllText(filename,"
+          ]
+        ],
+        "input": "File.WriteAllText(filename, content);",
+        "adv": "File.WriteAllText(Filename\\\", content);",
+        "gold_out": "}",
+        "pred_out": "File . WriteAllText(filename, content); ",
+        "adv_out": "f u nction(Filename, content) {",
+        "imp_words": {
+          "File.WriteAllText(filename,": 179.19493103027344
+        }
+      }
+    },
+    {
+      "sample_index": 48,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 18.58,
+        "after_attack_bleu": 18.33,
+        "change": 2,
+        "num_word": 5,
+        "query": 19,
+        "changes": [
+          [
+            2,
+            "([E",
+            "(IOException"
+          ],
+          [
+            1,
+            "except",
+            "catch"
+          ]
+        ],
+        "input": "} catch (IOException e) {",
+        "adv": "} except ([E e) {",
+        "gold_out": "}",
+        "pred_out": "e . s ource=e}catch(FileNotFoundException e){}}catch(IOException e){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione",
+        "adv_out": "t r y {",
+        "imp_words": {
+          "(IOException": 1292.669921875,
+          "catch": 1284.4844970703125
+        }
+      }
+    },
+    {
+      "sample_index": 54,
+      "errors": [
+        "Success logic error: expected 4, got 2"
+      ],
+      "sample": {
+        "success": 2,
+        "pred_bleu": 22.35,
+        "after_attack_bleu": 22.35,
+        "change": 1,
+        "num_word": 2,
+        "query": 49,
+        "changes": [
+          [
+            0,
+            "}",
+            "try"
+          ]
+        ],
+        "input": "try {",
+        "adv": "} {",
+        "gold_out": "public static int factorial(int n) {",
+        "pred_out": "s w itch(e) { }",
+        "adv_out": "s w itch(e) { }",
+        "imp_words": {
+          "try": 113.10537719726562
+        }
+      }
+    },
+    {
+      "sample_index": 55,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 18.8,
+        "after_attack_bleu": 18.58,
+        "change": 1,
+        "num_word": 2,
+        "query": 18,
+        "changes": [
+          [
+            0,
+            "!",
+            "return"
+          ]
+        ],
+        "input": "return File.ReadAllText(filename);",
+        "adv": "! File.ReadAllText(filename);",
+        "gold_out": "if (n <= 1) return 1;",
+        "pred_out": "functio n ( filename )",
+        "adv_out": "r e turn!File.exists(filename)},!File.exists(filename))}function readFile(filename){return File.readAllText(filename);}function readFile(filename){return",
+        "imp_words": {
+          "return": 71.19141387939453
+        }
+      }
+    },
+    {
+      "sample_index": 56,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 18.58,
+        "after_attack_bleu": 18.33,
+        "change": 2,
+        "num_word": 5,
+        "query": 19,
+        "changes": [
+          [
+            2,
+            "([E",
+            "(IOException"
+          ],
+          [
+            1,
+            "except",
+            "catch"
+          ]
+        ],
+        "input": "} catch (IOException e) {",
+        "adv": "} except ([E e) {",
+        "gold_out": "return n * factorial(n - 1);",
+        "pred_out": "e . s ource=e}catch(FileNotFoundException e){}}catch(IOException e){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione",
+        "adv_out": "t r y {",
+        "imp_words": {
+          "(IOException": 1292.669921875,
+          "catch": 1284.4844970703125
+        }
+      }
+    },
+    {
+      "sample_index": 62,
+      "errors": [
+        "Success logic error: expected 4, got 2"
+      ],
+      "sample": {
+        "success": 2,
+        "pred_bleu": 12.6,
+        "after_attack_bleu": 12.6,
+        "change": 1,
+        "num_word": 2,
+        "query": 49,
+        "changes": [
+          [
+            0,
+            "this",
+            "using"
+          ]
+        ],
+        "input": "using System;",
+        "adv": "this System;",
+        "gold_out": "if (n % i == 0) return false;",
+        "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+        "adv_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+        "imp_words": {
+          "using": 324.45654296875
+        }
+      }
+    },
+    {
+      "sample_index": 64,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 14.26,
+        "change": 1,
+        "num_word": 4,
+        "query": 2,
+        "changes": [
+          [
+            2,
+            "math[",
+            "MathUtils"
+          ]
+        ],
+        "input": "public class MathUtils {",
+        "adv": "public class math[ {",
+        "gold_out": "return true;",
+        "pred_out": "public static int Math =",
+        "adv_out": "} ]",
+        "imp_words": {
+          "MathUtils": 129.09390258789062
+        }
+      }
+    },
+    {
+      "sample_index": 65,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 22.31,
+        "change": 1,
+        "num_word": 8,
+        "query": 4,
+        "changes": [
+          [
+            6,
+            "Base ,",
+            "base,"
+          ]
+        ],
+        "input": "public static double Power(double base, double exponent) {",
+        "adv": "public static double Power(double Base , double exponent) {",
+        "gold_out": "}",
+        "pred_out": "public static double ToPower(double base,",
+        "adv_out": "public static",
+        "imp_words": {
+          "base,": 157.34640502929688
+        }
+      }
+    },
+    {
+      "sample_index": 66,
+      "errors": [
+        "Success logic error: expected 1, got 4"
+      ],
+      "sample": {
+        "success": 4,
+        "pred_bleu": 22.96,
+        "after_attack_bleu": 22.09,
+        "change": 1,
+        "num_word": 3,
+        "query": 3,
+        "changes": [
+          [
+            1,
+            "Math.power(Base),",
+            "Math.Pow(base,"
+          ]
+        ],
+        "input": "return Math.Pow(base, exponent);",
+        "adv": "return Math.power(Base), exponent);",
+        "gold_out": "}",
+        "pred_out": "functio n ( base ,",
+        "adv_out": "Math.pow(Base, exponent); } , Math.pow:function(Base,exponent){return Math.pow(Base,exponent);}",
+        "imp_words": {
+          "Math.Pow(base,": 137.3411865234375
+        }
+      }
+    }
+  ],
+  "inconsistencies": [],
+  "field_analysis": {
+    "samples_with_empty_input": 9,
+    "samples_with_empty_gold": 6,
+    "samples_with_changes": 35,
+    "samples_with_imp_words": 35,
+    "avg_query_count": 13.08955223880597
+  },
+  "success_distribution": {
+    "Attack Failed": 28,
+    "No Changes": 30,
+    "Empty Gold": 7,
+    "Attack Success": 2
+  },
+  "bleu_analysis": {
+    "pred_bleu_stats": {
+      "min": 0.0,
+      "max": 84.09,
+      "avg": 23.110149253731343,
+      "zero_count": 6
+    },
+    "after_bleu_stats": {
+      "min": 0.0,
+      "max": 38.61,
+      "avg": 17.37731343283582,
+      "zero_count": 8
+    },
+    "bleu_decrease_count": 30,
+    "bleu_increase_count": 0,
+    "bleu_same_count": 37
+  }
+}

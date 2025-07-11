@@ -1,0 +1,253 @@
+public class Calculator {
+    public int add(int a, int b) {
+        return a - b;  // Bug: should be a + b
+    }
+}
+public class StringUtils {
+    public static String reverse(String str) {
+        if (str == null) return null;
+        return str;  // Bug: should reverse the string
+    }
+}
+public class ArrayHelper {
+    public static int findMax(int[] arr) {
+        if (arr == null || arr.length == 0) return -1;
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < max) {  // Bug: should be arr[i] > max
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+}
+public class FileHandler {
+    public static void writeToFile(String filename, String content) {
+        try (FileWriter writer = new FileWriter(filename)) {
+            writer.write(content);
+            writer.flush();  // Bug: missing close() or use try-with-resources properly
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+public class MathUtils {
+    public static boolean isPrime(int n) {
+        if (n < 2) return false;
+        for (int i = 2; i < n; i++) {  // Bug: should be i <= Math.sqrt(n)
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+}
+public class ValidationUtils {
+    public static boolean isValidEmail(String email) {
+        if (email == null) return false;
+        return email.contains("@");  // Bug: too simple validation
+    }
+    
+    public static boolean isValidPhone(String phone) {
+        if (phone == null) return false;
+        return phone.length() >= 10;  // Bug: too simple validation
+    }
+}
+public class TestClass0 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass1 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass2 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass3 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass4 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass5 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass6 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass7 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass8 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass9 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass10 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass11 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass12 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass13 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass14 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass15 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass16 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass17 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass18 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}
+public class TestClass19 {
+    public static int calculate(int x, int y) {
+        return x - y;  // Bug: should be x + y
+    }
+    
+    public static String process(String input) {
+        if (input == null) return null;
+        return input;  // Bug: should process the input
+    }
+}

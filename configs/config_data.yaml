@@ -4,8 +4,60 @@ translation:
     data_path_y: './data/code_translation/test.java-cs.txt.cs'
 
   cs_java:
+    data_path_x:
+  java_cs_large:
+    data_path_x : './data/code_translation/large.java-cs.txt.java'
+    data_path_y: './data/code_translation/large.java-cs.txt.cs'
+
+  cs_java_large:
+    data_path_x: './data/code_translation/large.java-cs.txt.cs'
+    data_path_y : './data/code_translation/large.java-cs.txt.java'
+
+refinement:
+  java_small_large:
+    data_path_x : './data/code_refinement/small/large.buggy-fixed.buggy'
+    data_path_y: './data/code_refinement/small/large.buggy-fixed.fixed'
+    
+  java_medium_large:
+    data_path_x : './data/code_refinement/medium/large.buggy-fixed.buggy'
+    data_path_y: './data/code_refinement/medium/large.buggy-fixed.fixed'
+
+summarize:
+  ruby_large:
+    data_path_x : ./data/code_summarization/code-to-text/ruby/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/ruby/large.jsonl
+  javascript_large:
+    data_path_x : ./data/code_summarization/code-to-text/javascript/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/javascript/large.jsonl
+  go_large:
+    data_path_x : ./data/code_summarization/code-to-text/go/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/go/large.jsonl
+  python_large:
+    data_path_x : ./data/code_summarization/code-to-text/python/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/python/large.jsonl
+  java_large:
+    data_path_x : ./data/code_summarization/code-to-text/java/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/java/large.jsonl
+  php_large:
+    data_path_x : ./data/code_summarization/code-to-text/php/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/php/large.jsonl
+
+translation:
+  java_cs:
+    data_path_x : './data/code_translation/test.java-cs.txt.java'
+    data_path_y: './data/code_translation/test.java-cs.txt.cs'
+
+  cs_java:
     data_path_x: './data/code_translation/test.java-cs.txt.cs'
     data_path_y : './data/code_translation/test.java-cs.txt.java'
+
+  java_cs_large:
+    data_path_x : './data/code_translation/large.java-cs.txt.java'
+    data_path_y: './data/code_translation/large.java-cs.txt.cs'
+
+  cs_java_large:
+    data_path_x: './data/code_translation/large.java-cs.txt.cs'
+    data_path_y : './data/code_translation/large.java-cs.txt.java'
 
 refinement:
   java_small:
@@ -15,6 +67,14 @@ refinement:
   java_medium:
     data_path_x : './data/code_refinement/medium/test.buggy-fixed.buggy'
     data_path_y: './data/code_refinement/medium/test.buggy-fixed.fixed'
+
+  java_small_large:
+    data_path_x : './data/code_refinement/small/large.buggy-fixed.buggy'
+    data_path_y: './data/code_refinement/small/large.buggy-fixed.fixed'
+    
+  java_medium_large:
+    data_path_x : './data/code_refinement/medium/large.buggy-fixed.buggy'
+    data_path_y: './data/code_refinement/medium/large.buggy-fixed.fixed'
 
 summarize:
   ruby:
@@ -35,6 +95,25 @@ summarize:
   php:
     data_path_x : ./data/code_summarization/code-to-text/php/test.jsonl
     data_path_y : ./data/code_summarization/code-to-text/php/test.jsonl
+
+  ruby_large:
+    data_path_x : ./data/code_summarization/code-to-text/ruby/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/ruby/large.jsonl
+  javascript_large:
+    data_path_x : ./data/code_summarization/code-to-text/javascript/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/javascript/large.jsonl
+  go_large:
+    data_path_x : ./data/code_summarization/code-to-text/go/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/go/large.jsonl
+  python_large:
+    data_path_x : ./data/code_summarization/code-to-text/python/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/python/large.jsonl
+  java_large:
+    data_path_x : ./data/code_summarization/code-to-text/java/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/java/large.jsonl
+  php_large:
+    data_path_x : ./data/code_summarization/code-to-text/php/large.jsonl
+    data_path_y : ./data/code_summarization/code-to-text/php/large.jsonl
 
 codet5:
   translation:
