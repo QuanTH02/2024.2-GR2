@@ -1,0 +1,1 @@
+Math.pow(Base, exponent); } , Math.pow:function(Base,exponent){return Math.pow(Base,exponent);}

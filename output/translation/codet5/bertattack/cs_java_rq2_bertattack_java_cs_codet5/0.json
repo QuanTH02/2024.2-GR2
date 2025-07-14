@@ -1,0 +1,25 @@
+[
+  {
+    "success": 4,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 18.58,
+    "change": 1,
+    "num_word": 2,
+    "query": 42,
+    "changes": [
+      [
+        0,
+        "[",
+        "using"
+      ]
+    ],
+    "input": "using System;",
+    "adv": "[ System;",
+    "gold_out": "public class Calculator {",
+    "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+    "adv_out": "Serializable ] public class MyClass {",
+    "imp_words": {
+      "using": 324.45654296875
+    }
+  }
+]

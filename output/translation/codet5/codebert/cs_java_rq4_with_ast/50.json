@@ -1,0 +1,1053 @@
+[
+  {
+    "success": 4,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 18.58,
+    "change": 1,
+    "num_word": 2,
+    "query": 26,
+    "changes": [
+      [
+        0,
+        "existing",
+        "using"
+      ]
+    ],
+    "input": "using System;",
+    "adv": "existing System;",
+    "gold_out": "public class Calculator {",
+    "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+    "adv_out": "c reateSystem: I C reateSystem {",
+    "imp_words": {
+      "using": 324.45654296875
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 20.25,
+    "after_attack_bleu": 20.25,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "",
+    "adv": "",
+    "gold_out": "public int add(int a, int b) {",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 4,
+    "pred_bleu": 32.37,
+    "after_attack_bleu": 30.21,
+    "change": 1,
+    "num_word": 4,
+    "query": 14,
+    "changes": [
+      [
+        2,
+        "\u0120public",
+        "Calculator"
+      ]
+    ],
+    "input": "public class Calculator {",
+    "adv": "public class \u0120public {",
+    "gold_out": "return a + b;",
+    "pred_out": "{ } }",
+    "adv_out": "public string myString ;",
+    "imp_words": {
+      "Calculator": 111.2520980834961
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 84.09,
+    "after_attack_bleu": 75.98,
+    "change": 1,
+    "num_word": 7,
+    "query": 3,
+    "changes": [
+      [
+        7,
+        "set",
+        "int"
+      ]
+    ],
+    "input": "public int Add(int a, int b) {",
+    "adv": "public int Add(int a, set b) {",
+    "gold_out": "}",
+    "pred_out": "public",
+    "adv_out": "} public",
+    "imp_words": {
+      "int": 89.60737609863281
+    }
+  },
+  {
+    "success": 3,
+    "pred_bleu": 0.0,
+    "after_attack_bleu": 0.0,
+    "change": 0,
+    "num_word": 4,
+    "query": 0,
+    "changes": [],
+    "input": "return a + b;",
+    "adv": "return a + b;",
+    "gold_out": "",
+    "pred_out": "c a se\"+b:b} f unction",
+    "adv_out": "c a se\"+b:b} f unction",
+    "imp_words": {}
+  },
+  {
+    "success": 2,
+    "pred_bleu": 20.25,
+    "after_attack_bleu": 20.25,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "public int subtract(int a, int b) {",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 2,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 22.96,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "",
+    "adv": "",
+    "gold_out": "return a - b;",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 4,
+    "pred_bleu": 84.09,
+    "after_attack_bleu": 35.93,
+    "change": 1,
+    "num_word": 7,
+    "query": 1,
+    "changes": [
+      [
+        8,
+        "b))",
+        "b)"
+      ]
+    ],
+    "input": "public int Subtract(int a, int b) {",
+    "adv": "public int Subtract(int a, int b)) {",
+    "gold_out": "}",
+    "pred_out": "public",
+    "adv_out": "public int Add (",
+    "imp_words": {
+      "b)": 93.36068725585938
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 1.54,
+    "change": 2,
+    "num_word": 4,
+    "query": 22,
+    "changes": [
+      [
+        2,
+        ";",
+        "-"
+      ],
+      [
+        0,
+        "int",
+        "return"
+      ]
+    ],
+    "input": "return a - b;",
+    "adv": "int a ; b;",
+    "gold_out": "}",
+    "pred_out": "case\"s\": r e t u",
+    "adv_out": "c",
+    "imp_words": {
+      "-": 142.632568359375,
+      "return": 133.76666259765625
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 38.61,
+    "after_attack_bleu": 38.61,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "public class StringUtils {",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 2,
+    "pred_bleu": 24.74,
+    "after_attack_bleu": 24.74,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "public static String reverse(String str) {",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 4,
+    "pred_bleu": 18.8,
+    "after_attack_bleu": 18.58,
+    "change": 1,
+    "num_word": 2,
+    "query": 26,
+    "changes": [
+      [
+        0,
+        "existing",
+        "using"
+      ]
+    ],
+    "input": "using System;",
+    "adv": "existing System;",
+    "gold_out": "if (str == null) return null;",
+    "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+    "adv_out": "c reateSystem: I C reateSystem {",
+    "imp_words": {
+      "using": 324.45654296875
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 18.58,
+    "after_attack_bleu": 18.33,
+    "change": 1,
+    "num_word": 2,
+    "query": 1,
+    "changes": [
+      [
+        0,
+        "File",
+        "using"
+      ]
+    ],
+    "input": "using System.Text;",
+    "adv": "File System.Text;",
+    "gold_out": "return new StringBuilder(str).reverse().toString();",
+    "pred_out": "c ass S t ring{ }",
+    "adv_out": "Module . System =",
+    "imp_words": {
+      "using": 84.11221313476562
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 27.3,
+    "after_attack_bleu": 27.3,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "",
+    "adv": "",
+    "gold_out": "}",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 3,
+    "pred_bleu": 0.0,
+    "after_attack_bleu": 0.0,
+    "change": 0,
+    "num_word": 4,
+    "query": 0,
+    "changes": [],
+    "input": "public class StringUtils {",
+    "adv": "public class StringUtils {",
+    "gold_out": "",
+    "pred_out": "{ } }",
+    "adv_out": "{ } }",
+    "imp_words": {}
+  },
+  {
+    "success": 3,
+    "pred_bleu": 0.57,
+    "after_attack_bleu": 0.57,
+    "change": 0,
+    "num_word": 6,
+    "query": 0,
+    "changes": [],
+    "input": "public static string Reverse(string str) {",
+    "adv": "public static string Reverse(string str) {",
+    "gold_out": "public static boolean isEmpty(String str) {",
+    "pred_out": "r",
+    "adv_out": "r",
+    "imp_words": {}
+  },
+  {
+    "success": 2,
+    "pred_bleu": 19.72,
+    "after_attack_bleu": 19.72,
+    "change": 3,
+    "num_word": 6,
+    "query": 65,
+    "changes": [
+      [
+        6,
+        "continue",
+        "return"
+      ],
+      [
+        4,
+        "null )",
+        "null)"
+      ],
+      [
+        3,
+        "++",
+        "=="
+      ]
+    ],
+    "input": "if (str == null) return null;",
+    "adv": "return (-string ++ null ) continue null;",
+    "gold_out": "return str == null || str.length() == 0;",
+    "pred_out": "if ( str == null)",
+    "adv_out": "if ( str == null)",
+    "imp_words": {
+      "return": 135.63612365722656,
+      "(str": 115.34909057617188,
+      "null)": 113.11908721923828,
+      "if": 103.39500427246094,
+      "==": 101.8302230834961
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 22.96,
+    "change": 2,
+    "num_word": 4,
+    "query": 58,
+    "changes": [
+      [
+        4,
+        "(",
+        "="
+      ],
+      [
+        0,
+        " char []",
+        "char[]"
+      ]
+    ],
+    "input": "char[] charArray = str.ToCharArray();",
+    "adv": " char [] character Array ( str.ToCharArray();",
+    "gold_out": "}",
+    "pred_out": "charArray = []; f or(",
+    "adv_out": "charArray = []; f or(",
+    "imp_words": {
+      "=": 130.4225616455078,
+      "charArray": 116.90701293945312,
+      "char[]": 108.77887725830078
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 22.96,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "Array.Reverse(charArray);",
+    "adv": "Array.Reverse(charArray);",
+    "gold_out": "}",
+    "pred_out": "r e v e rse(charArray)",
+    "adv_out": "r e v e rse(charArray)",
+    "imp_words": {}
+  },
+  {
+    "success": 4,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 16.95,
+    "change": 2,
+    "num_word": 3,
+    "query": 16,
+    "changes": [
+      [
+        1,
+        "void",
+        "new"
+      ],
+      [
+        0,
+        "class",
+        "return"
+      ]
+    ],
+    "input": "return new string(charArray);",
+    "adv": "class void string(charArray);",
+    "gold_out": "public class ArrayHelper {",
+    "pred_out": "charArray.lengt h } f unction",
+    "adv_out": "{ }",
+    "imp_words": {
+      "new": 188.1111602783203,
+      "return": 137.72645568847656
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 24.74,
+    "after_attack_bleu": 24.74,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "public static int[] sort(int[] arr) {",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 2,
+    "pred_bleu": 18.8,
+    "after_attack_bleu": 18.8,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "",
+    "adv": "",
+    "gold_out": "if (arr == null) return null;",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 4,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 1.54,
+    "change": 1,
+    "num_word": 6,
+    "query": 5,
+    "changes": [
+      [
+        7,
+        "str )",
+        "str)"
+      ]
+    ],
+    "input": "public static bool IsEmpty(string str) {",
+    "adv": "public static bool IsEmpty(string str ) {",
+    "gold_out": "Arrays.sort(arr);",
+    "pred_out": "public static bool IsEmpty(string str)",
+    "adv_out": "r",
+    "imp_words": {
+      "str)": 178.43414306640625
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 27.3,
+    "after_attack_bleu": 23.53,
+    "change": 1,
+    "num_word": 2,
+    "query": 4,
+    "changes": [
+      [
+        0,
+        "get",
+        "return"
+      ]
+    ],
+    "input": "return string.IsNullOrEmpty(str);",
+    "adv": "get string.IsNullOrEmpty(str);",
+    "gold_out": "return arr;",
+    "pred_out": "unction( s tr) { return",
+    "adv_out": "y pe.IsNullOrEmpty?str : null; ",
+    "imp_words": {
+      "return": 76.05236053466797
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 27.3,
+    "after_attack_bleu": 27.3,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "}",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 3,
+    "pred_bleu": 0.0,
+    "after_attack_bleu": 0.0,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 4,
+    "pred_bleu": 18.8,
+    "after_attack_bleu": 18.58,
+    "change": 1,
+    "num_word": 2,
+    "query": 26,
+    "changes": [
+      [
+        0,
+        "existing",
+        "using"
+      ]
+    ],
+    "input": "using System;",
+    "adv": "existing System;",
+    "gold_out": "public static int findMax(int[] arr) {",
+    "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+    "adv_out": "c reateSystem: I C reateSystem {",
+    "imp_words": {
+      "using": 324.45654296875
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 6.74,
+    "after_attack_bleu": 4.19,
+    "change": 1,
+    "num_word": 2,
+    "query": 31,
+    "changes": [
+      [
+        0,
+        "\u0120File",
+        "using"
+      ]
+    ],
+    "input": "using System.Linq;",
+    "adv": "\u0120File System.Linq;",
+    "gold_out": "if (arr == null || arr.length == 0) return -1;",
+    "pred_out": "using System.Collections; using System.Linq;",
+    "adv_out": "\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd\ufffds\ufffd",
+    "imp_words": {
+      "using": 208.95001220703125
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 22.96,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "",
+    "adv": "",
+    "gold_out": "return Arrays.stream(arr).max().getAsInt();",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 4,
+    "pred_bleu": 27.3,
+    "after_attack_bleu": 1.83,
+    "change": 1,
+    "num_word": 4,
+    "query": 1,
+    "changes": [
+      [
+        2,
+        "ObjectSupport",
+        "ArrayHelper"
+      ]
+    ],
+    "input": "public class ArrayHelper {",
+    "adv": "public class ObjectSupport {",
+    "gold_out": "}",
+    "pred_out": "[ ] array ; }",
+    "adv_out": "}",
+    "imp_words": {
+      "ArrayHelper": 129.99864196777344
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 1.54,
+    "change": 1,
+    "num_word": 6,
+    "query": 5,
+    "changes": [
+      [
+        1,
+        "null",
+        "static"
+      ]
+    ],
+    "input": "public static int[] Sort(int[] arr) {",
+    "adv": "public null int[] Sort(int[] arr) {",
+    "gold_out": "}",
+    "pred_out": "r e t u rn",
+    "adv_out": "public",
+    "imp_words": {
+      "static": 145.5618133544922
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 22.96,
+    "change": 2,
+    "num_word": 6,
+    "query": 66,
+    "changes": [
+      [
+        4,
+        "string )",
+        "null)"
+      ],
+      [
+        3,
+        "+",
+        "=="
+      ]
+    ],
+    "input": "if (arr == null) return null;",
+    "adv": "return (-ar + string ) union null;",
+    "gold_out": "public class FileHandler {",
+    "pred_out": "if (arr == null) return",
+    "adv_out": "if (arr == null) return",
+    "imp_words": {
+      "null)": 138.78582763671875,
+      "==": 126.1634750366211,
+      "return": 119.90895080566406,
+      "if": 115.58282470703125,
+      "(arr": 108.95790100097656
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 12.6,
+    "after_attack_bleu": 12.6,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "Array.Sort(arr);",
+    "adv": "Array.Sort(arr);",
+    "gold_out": "public static void writeToFile(String filename, String content) {",
+    "pred_out": "unction( a r g s){retur",
+    "adv_out": "unction( a r g s){retur",
+    "imp_words": {}
+  },
+  {
+    "success": 2,
+    "pred_bleu": 15.72,
+    "after_attack_bleu": 15.72,
+    "change": 1,
+    "num_word": 2,
+    "query": 10,
+    "changes": [
+      [
+        0,
+        "get",
+        "return"
+      ]
+    ],
+    "input": "return arr;",
+    "adv": "get arr;",
+    "gold_out": "try (FileWriter writer = new FileWriter(filename)) {",
+    "pred_out": "functi o n (arr,k y){if(arr==null)return null;for(var",
+    "adv_out": "functi o n (arr,k y){if(arr==null)return null;for(var",
+    "imp_words": {
+      "return": 374.8768615722656
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 22.96,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "writer.write(content);",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 2,
+    "pred_bleu": 30.21,
+    "after_attack_bleu": 30.21,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "",
+    "adv": "",
+    "gold_out": "} catch (IOException e) {",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 4,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 22.31,
+    "change": 1,
+    "num_word": 6,
+    "query": 1,
+    "changes": [
+      [
+        3,
+        "FindMax(IntArray",
+        "FindMax(int[]"
+      ]
+    ],
+    "input": "public static int FindMax(int[] arr) {",
+    "adv": "public static int FindMax(IntArray arr) {",
+    "gold_out": "e.printStackTrace();",
+    "pred_out": "public static int FindMax (",
+    "adv_out": "public static",
+    "imp_words": {
+      "FindMax(int[]": 152.8195343017578
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 14.26,
+    "change": 3,
+    "num_word": 10,
+    "query": 61,
+    "changes": [
+      [
+        12,
+        "float",
+        "return"
+      ],
+      [
+        10,
+        "0 )",
+        "0)"
+      ],
+      [
+        1,
+        "($arr",
+        "(arr"
+      ]
+    ],
+    "input": "if (arr == null || arr.Length == 0) return -1;",
+    "adv": "this ($arr == null || arr.Type == 0 ) float -1;",
+    "gold_out": "}",
+    "pred_out": "if (arr == null) return",
+    "adv_out": "float \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd",
+    "imp_words": {
+      "return": 157.88531494140625,
+      "0)": 150.7478485107422,
+      "arr.Length": 128.96722412109375,
+      "if": 126.7657699584961,
+      "(arr": 124.8311767578125
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 22.96,
+    "change": 1,
+    "num_word": 2,
+    "query": 6,
+    "changes": [
+      [
+        0,
+        "public",
+        "return"
+      ]
+    ],
+    "input": "return arr.Max();",
+    "adv": "public arr.Max();",
+    "gold_out": "}",
+    "pred_out": "r eturn arr.Max(functi o n(arr",
+    "adv_out": "r eturn arr.Max(functi o n(arr",
+    "imp_words": {
+      "return": 197.17315673828125
+    }
+  },
+  {
+    "success": 3,
+    "pred_bleu": 0.0,
+    "after_attack_bleu": 0.0,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 2,
+    "pred_bleu": 24.74,
+    "after_attack_bleu": 24.74,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "public static String readFromFile(String filename) {",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 2,
+    "pred_bleu": 12.6,
+    "after_attack_bleu": 12.6,
+    "change": 1,
+    "num_word": 2,
+    "query": 39,
+    "changes": [
+      [
+        0,
+        "usage",
+        "using"
+      ]
+    ],
+    "input": "using System;",
+    "adv": "usage System;",
+    "gold_out": "try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {",
+    "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+    "adv_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+    "imp_words": {
+      "using": 324.45654296875
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 30.21,
+    "after_attack_bleu": 22.96,
+    "change": 1,
+    "num_word": 2,
+    "query": 1,
+    "changes": [
+      [
+        0,
+        "Using",
+        "using"
+      ]
+    ],
+    "input": "using System.IO;",
+    "adv": "Using System.IO;",
+    "gold_out": "return reader.lines().collect(Collectors.joining(\"\\n\"));",
+    "pred_out": "using System.Collections.Generic; using System.Collections.Generic.InteropServices;",
+    "adv_out": "public static class Tester {",
+    "imp_words": {
+      "using": 324.10546875
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 30.21,
+    "after_attack_bleu": 30.21,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "",
+    "adv": "",
+    "gold_out": "} catch (IOException e) {",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  },
+  {
+    "success": 4,
+    "pred_bleu": 84.09,
+    "after_attack_bleu": 27.3,
+    "change": 1,
+    "num_word": 4,
+    "query": 1,
+    "changes": [
+      [
+        1,
+        "struct",
+        "class"
+      ]
+    ],
+    "input": "public class FileHandler {",
+    "adv": "public struct FileHandler {",
+    "gold_out": "e.printStackTrace();",
+    "pred_out": "}",
+    "adv_out": "public string path ; }",
+    "imp_words": {
+      "class": 91.3082275390625
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 30.93,
+    "after_attack_bleu": 22.96,
+    "change": 1,
+    "num_word": 8,
+    "query": 1,
+    "changes": [
+      [
+        10,
+        "string]",
+        "content)"
+      ]
+    ],
+    "input": "public static void WriteToFile(string filename, string content) {",
+    "adv": "public static void WriteToFile(string filename, string string] {",
+    "gold_out": "return null;",
+    "pred_out": "{",
+    "adv_out": "string [], string [], int",
+    "imp_words": {
+      "content)": 78.94058990478516
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 27.3,
+    "after_attack_bleu": 22.96,
+    "change": 1,
+    "num_word": 2,
+    "query": 1,
+    "changes": [
+      [
+        0,
+        "except",
+        "try"
+      ]
+    ],
+    "input": "try {",
+    "adv": "except {",
+    "gold_out": "}",
+    "pred_out": "s w itch(e) { }",
+    "adv_out": "c lass S t ring:",
+    "imp_words": {
+      "try": 113.10537719726562
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 30.21,
+    "after_attack_bleu": 22.96,
+    "change": 1,
+    "num_word": 2,
+    "query": 1,
+    "changes": [
+      [
+        0,
+        "File.WriteAllText(Filename\\\",",
+        "File.WriteAllText(filename,"
+      ]
+    ],
+    "input": "File.WriteAllText(filename, content);",
+    "adv": "File.WriteAllText(Filename\\\", content);",
+    "gold_out": "}",
+    "pred_out": "File . WriteAllText(filename, content); ",
+    "adv_out": "f u nction(Filename, content) {",
+    "imp_words": {
+      "File.WriteAllText(filename,": 179.19493103027344
+    }
+  },
+  {
+    "success": 4,
+    "pred_bleu": 18.58,
+    "after_attack_bleu": 16.62,
+    "change": 2,
+    "num_word": 5,
+    "query": 22,
+    "changes": [
+      [
+        2,
+        "([E",
+        "(IOException"
+      ],
+      [
+        1,
+        "back",
+        "catch"
+      ]
+    ],
+    "input": "} catch (IOException e) {",
+    "adv": "} back ([E e) {",
+    "gold_out": "}",
+    "pred_out": "e . s ource=e}catch(FileNotFoundException e){}}catch(IOException e){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione){e.printStackTrace();}catch(Exceptione",
+    "adv_out": "nction(e ) {",
+    "imp_words": {
+      "(IOException": 1292.669921875,
+      "catch": 1284.4844970703125
+    }
+  },
+  {
+    "success": 2,
+    "pred_bleu": 27.3,
+    "after_attack_bleu": 27.3,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "Console.WriteLine(e.Message);",
+    "adv": "Console.WriteLine(e.Message);",
+    "gold_out": "public class MathUtils {",
+    "pred_out": "nction(e ) { e.Message=e.Message.Replace(e.Message,e.Message);}function Log(e){",
+    "adv_out": "nction(e ) { e.Message=e.Message.Replace(e.Message,e.Message);}function Log(e){",
+    "imp_words": {}
+  },
+  {
+    "success": 2,
+    "pred_bleu": 16.58,
+    "after_attack_bleu": 16.58,
+    "change": 0,
+    "num_word": 1,
+    "query": 0,
+    "changes": [],
+    "input": "}",
+    "adv": "}",
+    "gold_out": "public static double power(double base, double exponent) {",
+    "pred_out": "public class C { }",
+    "adv_out": "public class C { }",
+    "imp_words": {}
+  }
+]

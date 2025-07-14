@@ -1,0 +1,25 @@
+[
+  {
+    "success": 4,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 18.58,
+    "change": 1,
+    "num_word": 2,
+    "query": 26,
+    "changes": [
+      [
+        0,
+        "existing",
+        "using"
+      ]
+    ],
+    "input": "using System;",
+    "adv": "existing System;",
+    "gold_out": "public class Calculator {",
+    "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+    "adv_out": "c reateSystem: I C reateSystem {",
+    "imp_words": {
+      "using": 324.45654296875
+    }
+  }
+]

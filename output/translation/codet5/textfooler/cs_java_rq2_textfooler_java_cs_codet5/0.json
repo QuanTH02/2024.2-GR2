@@ -1,0 +1,19 @@
+[
+  {
+    "success": 2,
+    "pred_bleu": 22.96,
+    "after_attack_bleu": 22.96,
+    "change": 0,
+    "num_word": 2,
+    "query": 0,
+    "changes": [],
+    "input": "using System;",
+    "adv": "using System;",
+    "gold_out": "public class Calculator {",
+    "pred_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+    "adv_out": "System.Collections.Generic; using System.Linq; using System.IO;",
+    "imp_words": {
+      "using": 324.45654296875
+    }
+  }
+]
